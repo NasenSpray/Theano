@@ -3641,6 +3641,9 @@ class GpuJoin(tensor.Join, GpuOp):
 
     def c_code_cache_version(self):
         return (7,)
+        
+    def c_compile_args(self):
+        return ["-std=c++11"]
 
 gpu_join = GpuJoin()
 
